@@ -1,12 +1,12 @@
 class Ingredients
   def ingredients
-    ing = []
+    ingredients_list = []
     number = 1
     while number < 6 do
       input = gets.chomp
-      ing << input
+      ingredients_list << input
       number += 1
     end
-    ing
+    ingredients_list.uniq
   end
 end
