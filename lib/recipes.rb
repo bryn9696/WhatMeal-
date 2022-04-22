@@ -6,7 +6,6 @@ class Recipes
     cheese_toasty = ['cheese', 'bread']
     ham_sandwhich = ['ham', 'bread']
     options = []
-    p ingredients_list
     cheese_toasty.each do |i|
       if ingredients_list.include?(i) == true
         options << "cheese toasty"

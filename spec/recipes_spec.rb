@@ -20,4 +20,9 @@ describe Recipes do
     recipe = Recipes.new
     expect(recipe.choices(["ham", "cheese"])).to eq("cheese toasty, ham_sandwhich")
   end
+
+  it 'returns all available recipes' do
+    recipe = Recipes.new
+    expect(recipe.choices(["egg", "ham", "cheese"])).to eq("cheese toasty, ham_sandwhich")
+  end
 end
