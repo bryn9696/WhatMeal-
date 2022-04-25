@@ -23,7 +23,7 @@ describe Recipes do
 
   it 'returns all available recipes' do
     recipe = Recipes.new
-    expect(recipe.choices(["ham", "cheese"])).to eq("Cheese Toasty, Ham Sandwhich")
+    expect(recipe.choices(["ham", "cheese", "pasta"])).to eq("Cheese Toasty, Ham Sandwhich, Tomato Pasta")
   end
 
   it 'returns all available recipes' do
