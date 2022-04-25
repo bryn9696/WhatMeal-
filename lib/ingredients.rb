@@ -5,10 +5,10 @@ class Ingredients
 
   def initialize
     @recipes = Recipes.new
+    @ingredients_list = []
   end
 
   def ingredients
-    @ingredients_list = []
     total = 1
     while total < 6 do
       input = gets.chomp
@@ -16,7 +16,6 @@ class Ingredients
       total += 1
     end
     @ingredients_list = ingredients_list.uniq
-    p @ingredients_list
     return @ingredients_list
   end
 
