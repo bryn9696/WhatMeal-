@@ -6,7 +6,7 @@ class Ingredients
   def initialize
     @recipes = Recipes.new
   end
-  
+
   def ingredients
     @ingredients_list = []
     total = 1
