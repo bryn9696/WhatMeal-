@@ -7,11 +7,8 @@ class Recipes
     self.cheese_toasty(ingredients_list)
     self.ham_sandwhich(ingredients_list)
 
-    if @options.length >= 1
-      p @options.join(', ')
-    else
-      p "Have you got anything else?!"
-    end
+    @options.length >= 1 ? @options.uniq.join(', ') : "Have you got anything else?!"
+ 
   end
 
   def cheese_toasty(ingredients_list)

@@ -30,4 +30,9 @@ describe Recipes do
     recipe = Recipes.new
     expect(recipe.choices(["egg", "ham", "cheese"])).to eq("Cheese Toasty, Ham Sandwhich")
   end
+
+  it 'returns multiple recipes when the same one ingredient is entered' do
+    recipe = Recipes.new
+    expect(recipe.choices(["ham", "cheese", "bread"])).to eq("Cheese Toasty, Ham Sandwhich")
+  end
 end
