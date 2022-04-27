@@ -24,4 +24,11 @@ describe Ingredients do
     allow(ing).to receive(:gets).and_return('cheese', 'wine', 'chicken', 'tomatoes', 'ham', 'ham', 'wine')
     expect(ing.ingredients).to eq(['Cheese', 'Wine', 'Chicken', 'Tomatoes', 'Ham'])
   end
+
+  it 'assumes correct ingredient when spelt wrong' do
+    ing = Ingredients.new
+    allow(ing).to receive(:gets).and_return('Chee')
+    ing.ingredients
+    expect(ing.dictionary).to eq(['Cheese'])
+  end
 end

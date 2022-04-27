@@ -19,6 +19,19 @@ class Ingredients
     return @ingredients_list
   end
 
+  def dictionary
+    spell_check = ["Cheese", "Ham", "Bread", "Pasta", "Tomatoes"]
+    # spell_check.each do |ing|
+      p @ingredients_list[0]
+      p spell_check[0]
+      if spell_check[0].include?(@ingredients_list[0]) 
+        @ingredients_list.delete_at(0)
+        @ingredients_list << spell_check[0]
+      end
+    # end
+    p @ingredients_list
+  end
+
   def choice
     @recipes.choices(@ingredients_list)
   end
