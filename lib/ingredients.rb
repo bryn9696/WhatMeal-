@@ -12,10 +12,10 @@ class Ingredients
     total = 1
     while total < 6 do
       input = gets.chomp
-      ingredients_list << input.downcase.capitalize
+      @ingredients_list << input.to_s.downcase.capitalize
       total += 1
     end
-    @ingredients_list = ingredients_list.uniq
+    @ingredients_list = @ingredients_list.uniq
     return @ingredients_list
   end
 

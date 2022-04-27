@@ -3,36 +3,36 @@ require './lib/recipes'
 describe Recipes do
   it 'returns recipe matching one ingredient (when given first)' do
     recipe = Recipes.new
-    expect(recipe.choices(["cheese", "pork"])).to eq('Cheese Toasty')
+    expect(recipe.choices(["Cheese", "Pork"])).to eq('Cheese Toasty')
   end
 
   it 'returns recipe matching one ingredient (when given second)' do
     recipe = Recipes.new
-    expect(recipe.choices(["pork", "cheese"])).to eq('Cheese Toasty')
+    expect(recipe.choices(["Pork", "Cheese"])).to eq('Cheese Toasty')
   end
 
   it 'returns recipe matching one ingredient (when given second)' do
     recipe = Recipes.new
-    expect(recipe.choices(["ham", "egg"])).to eq('Ham Sandwhich')
+    expect(recipe.choices(["Ham", "Egg"])).to eq('Ham Sandwhich')
   end
 
   it 'returns error message when ingredients dont match any recipes' do
     recipe = Recipes.new
-    expect(recipe.choices(["beef", "pork"])).to eq('Have you got anything else?!')
+    expect(recipe.choices(["Beef", "Pork"])).to eq('Have you got anything else?!')
   end
 
   it 'returns all available recipes' do
     recipe = Recipes.new
-    expect(recipe.choices(["ham", "cheese", "pasta"])).to eq("Cheese Toasty, Ham Sandwhich, Tomato Pasta")
+    expect(recipe.choices(["Ham", "Cheese", "Pasta"])).to eq("Cheese Toasty, Ham Sandwhich, Tomato Pasta")
   end
 
   it 'returns all available recipes' do
     recipe = Recipes.new
-    expect(recipe.choices(["egg", "ham", "cheese"])).to eq("Cheese Toasty, Ham Sandwhich")
+    expect(recipe.choices(["Egg", "Ham", "Cheese"])).to eq("Cheese Toasty, Ham Sandwhich")
   end
 
   it 'returns multiple recipes when the same one ingredient is entered' do
     recipe = Recipes.new
-    expect(recipe.choices(["ham", "cheese", "bread"])).to eq("Cheese Toasty, Ham Sandwhich")
+    expect(recipe.choices(["Ham", "Cheese", "Bread"])).to eq("Cheese Toasty, Ham Sandwhich")
   end
 end

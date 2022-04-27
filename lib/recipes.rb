@@ -4,9 +4,9 @@ class Recipes
 
   def initialize
     @options = []
-    @cheese_toasty = ['cheese', 'bread']
-    @ham_sandwhich = ['ham', 'bread']
-    @tomato_pasta = ['pasta', 'tomatoes']
+    @cheese_toasty = ['Cheese', 'Bread']
+    @ham_sandwhich = ['Ham', 'Bread']
+    @tomato_pasta = ['Pasta', 'Tomatoes']
   end
 
   def choices(ingredients_list)
