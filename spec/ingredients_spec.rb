@@ -52,4 +52,11 @@ describe Ingredients do
     ing.ingredients
     expect(ing.dictionary).to eq(["Bread"])
   end
+
+  it 'assumes correct ingredient when multiple words spelt wrong (letters in wrong order)' do
+    ing = Ingredients.new
+    allow(ing).to receive(:gets).and_return('Berad', 'Cehese')
+    ing.ingredients
+    expect(ing.dictionary).to eq(["Bread", "Cheese"])
+  end
 end
