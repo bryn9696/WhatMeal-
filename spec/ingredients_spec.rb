@@ -66,4 +66,11 @@ describe Ingredients do
     ing.ingredients
     expect(ing.dictionary).to eq(["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"])
   end
+
+  # it 'assumes correct ingredient when only 3 ingredients entered but multiple words spelt wrong (missing end letters) 3' do
+  #   ing = Ingredients.new
+  #   allow(ing).to receive(:gets).and_return('hma', 'Pastz', 'Bre', 'Csehee')
+  #   ing.ingredients
+  #   expect(ing.dictionary).to eq(["Bread", "Cheese", "Tomatoes"])
+  # end
 end
