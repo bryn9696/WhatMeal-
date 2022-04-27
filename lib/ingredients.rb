@@ -15,15 +15,13 @@ class Ingredients
       @ingredients_list << input.to_s.downcase.capitalize
       total += 1
     end
-    @ingredients_list = @ingredients_list.uniq
+    @ingredients_list = @ingredients_list.uniq.sort
     return @ingredients_list
   end
 
   def dictionary
-    spell_check = ["Cheese", "Ham", "Bread", "Pasta", "Tomatoes"]
+    spell_check = ["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"]
     spell_check.each do |ing|
-      p @ingredients_list[0]
-      p spell_check[0]
       i = 0
       if ing.include?(@ingredients_list[i]) 
         @ingredients_list.delete_at(i)
@@ -31,10 +29,24 @@ class Ingredients
       end
       i += 1
     end
-    p @ingredients_list
+
+    # @ingredients_list.each do |i|
+    #   p i
+    #   spell_check.each do |ing|
+    #     p ing
+    #     if ing.include?(i) 
+    #       @ingredients_list.delete(i)
+    #       p @ingredients_list
+    #       @ingredients_list << ing
+    #       p @ingredients_list
+    #     end
+    #   end
+    # end
+    return @ingredients_list
   end
 
   def choice
+    puts @ingredients_list
     @recipes.choices(@ingredients_list)
   end
 end

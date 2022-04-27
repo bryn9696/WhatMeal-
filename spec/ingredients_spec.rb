@@ -16,13 +16,13 @@ describe Ingredients do
   it 'returns multiple inputted ingredient' do
     ing = Ingredients.new
     allow(ing).to receive(:gets).and_return('cheese', 'wine', 'chicken', 'tomatoes', 'ham')
-    expect(ing.ingredients).to eq(['Cheese', 'Wine', 'Chicken', 'Tomatoes', 'Ham'])
+    expect(ing.ingredients).to eq(["Cheese", "Chicken", "Ham", "Tomatoes", "Wine"])
   end
 
   it 'returns multiple inputted ingredient and removes duplicate' do
     ing = Ingredients.new
     allow(ing).to receive(:gets).and_return('cheese', 'wine', 'chicken', 'tomatoes', 'ham', 'ham', 'wine')
-    expect(ing.ingredients).to eq(['Cheese', 'Wine', 'Chicken', 'Tomatoes', 'Ham'])
+    expect(ing.ingredients).to eq(["Cheese", "Chicken", "Ham", "Tomatoes", "Wine"])
   end
 
   it 'assumes correct ingredient when spelt wrong (missing end letters)' do
@@ -36,6 +36,13 @@ describe Ingredients do
     ing = Ingredients.new
     allow(ing).to receive(:gets).and_return('Chee', 'bre')
     ing.ingredients
-    expect(ing.dictionary).to eq(['Cheese', 'Bread'])
+    expect(ing.dictionary).to eq(["Bread", "Cheese"])
+  end
+
+  it 'assumes correct ingredient when multiple words spelt wrong (missing end letters) 2' do
+    ing = Ingredients.new
+    allow(ing).to receive(:gets).and_return('Bre', 'Chee')
+    ing.ingredients
+    expect(ing.dictionary).to eq(["Bread", "Cheese"])
   end
 end
