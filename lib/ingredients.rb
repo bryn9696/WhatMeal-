@@ -29,8 +29,8 @@ class Ingredients
       end
     end
     p @ingredients_list
-    if spell_check[0].chars().sort == "Berad".chars().sort
-      @ingredients_list.delete("Berad")
+    if spell_check[0].chars().sort == @ingredients_list[0].chars().sort
+      @ingredients_list.delete(@ingredients_list[0])
       @ingredients_list << spell_check[0]
     end
     p "#{@ingredients_list} 1"
