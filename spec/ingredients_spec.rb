@@ -41,9 +41,9 @@ describe Ingredients do
 
   it 'assumes correct ingredient when multiple words spelt wrong (missing end letters) 2' do
     ing = Ingredients.new
-    allow(ing).to receive(:gets).and_return('Bre', 'Chee')
+    allow(ing).to receive(:gets).and_return('Bre', 'Chee', 'Ha', 'Pas', 'Tomato')
     ing.ingredients
-    expect(ing.dictionary).to eq(["Bread", "Cheese"])
+    expect(ing.dictionary).to eq(["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"])
   end
 
   it 'assumes correct ingredient when multiple words spelt wrong (letters in wrong order)' do
@@ -58,5 +58,12 @@ describe Ingredients do
     allow(ing).to receive(:gets).and_return('Berad', 'Cehese')
     ing.ingredients
     expect(ing.dictionary).to eq(["Bread", "Cheese"])
+  end
+
+  it 'assumes correct ingredient when multiple words spelt wrong (letters in wrong order)' do
+    ing = Ingredients.new
+    allow(ing).to receive(:gets).and_return('Berad', 'Cehese', 'Hma', 'Psaat', 'Tomeasto')
+    ing.ingredients
+    expect(ing.dictionary).to eq(["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"])
   end
 end

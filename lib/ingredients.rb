@@ -29,11 +29,11 @@ class Ingredients
       end
       i += 1
     end
+    p @ingredients_list
     spell_check.each do |ing|
       i = 0
       if ing.chars().sort == @ingredients_list[i].chars().sort
         @ingredients_list.delete(@ingredients_list[i])
-        p "#{@ingredients_list} del"
         @ingredients_list << ing
       end
       i += 1
