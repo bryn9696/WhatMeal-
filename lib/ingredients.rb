@@ -27,22 +27,19 @@ class Ingredients
         @ingredients_list.delete_at(i)
         @ingredients_list << ing
       end
-      i += 1
     end
-
-    # @ingredients_list.each do |i|
-    #   p i
-    #   spell_check.each do |ing|
-    #     p ing
-    #     if ing.include?(i) 
-    #       @ingredients_list.delete(i)
-    #       p @ingredients_list
-    #       @ingredients_list << ing
-    #       p @ingredients_list
-    #     end
-    #   end
+    p @ingredients_list
+    if spell_check[0].chars().sort == "Berad".chars().sort
+      @ingredients_list.delete("Berad")
+      @ingredients_list << spell_check[0]
+    end
+    p "#{@ingredients_list} 1"
+    # if spell_check[1].chars().sort == "Cehese".chars().sort
+    #   @ingredients_list.delete("Cehese")
+    #     @ingredients_list << spell_check[1]
     # end
-    return @ingredients_list
+    # p "#{@ingredients_list} 2"
+    return @ingredients_list.uniq.sort
   end
 
   def choice
