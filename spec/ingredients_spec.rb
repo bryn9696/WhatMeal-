@@ -25,10 +25,17 @@ describe Ingredients do
     expect(ing.ingredients).to eq(['Cheese', 'Wine', 'Chicken', 'Tomatoes', 'Ham'])
   end
 
-  it 'assumes correct ingredient when spelt wrong' do
+  it 'assumes correct ingredient when spelt wrong (missing end letters)' do
     ing = Ingredients.new
     allow(ing).to receive(:gets).and_return('Chee')
     ing.ingredients
     expect(ing.dictionary).to eq(['Cheese'])
+  end
+
+  it 'assumes correct ingredient when multiple words spelt wrong (missing end letters)' do
+    ing = Ingredients.new
+    allow(ing).to receive(:gets).and_return('Chee', 'bre')
+    ing.ingredients
+    expect(ing.dictionary).to eq(['Cheese', 'Bread'])
   end
 end

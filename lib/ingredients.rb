@@ -21,14 +21,16 @@ class Ingredients
 
   def dictionary
     spell_check = ["Cheese", "Ham", "Bread", "Pasta", "Tomatoes"]
-    # spell_check.each do |ing|
+    spell_check.each do |ing|
       p @ingredients_list[0]
       p spell_check[0]
-      if spell_check[0].include?(@ingredients_list[0]) 
-        @ingredients_list.delete_at(0)
-        @ingredients_list << spell_check[0]
+      i = 0
+      if ing.include?(@ingredients_list[i]) 
+        @ingredients_list.delete_at(i)
+        @ingredients_list << ing
       end
-    # end
+      i += 1
+    end
     p @ingredients_list
   end
 
