@@ -36,8 +36,4 @@ describe Recipes do
     expect(recipe.choices(["Ham", "Cheese", "Bread"])).to eq("Cheese Toasty, Ham Sandwhich")
   end
 
-  it 'returns array of all ingredients in all recipes' do
-    recipe = Recipes.new
-    expect(recipe.ingredients).to eq(["Cheese", "Bread", "Butter", "Ham", "Bread", "Butter", "Pasta", "Tomatoes", "Peppers", "Chorizo", "Chicken", "Jerk", "Rice", "Tomatoes", "Bisto"])
-  end
 end
