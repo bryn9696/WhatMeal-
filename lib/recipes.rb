@@ -1,12 +1,17 @@
-
+require_relative 'ingredients.rb'
 class Recipes
-  attr_reader :ingredients_list
+  attr_accessor :ingredients_list, :ingredients
 
   def initialize
     @options = []
-    @cheese_toasty = ['Cheese', 'Bread']
-    @ham_sandwhich = ['Ham', 'Bread']
-    @tomato_pasta = ['Pasta', 'Tomatoes']
+    @cheese_toasty = ['Cheese', 'Bread', 'Butter']
+    @ham_sandwhich = ['Ham', 'Bread', 'Butter']
+    @tomato_pasta = ['Pasta', 'Tomatoes', 'Peppers', 'Chorizo']
+    @jerk_chicken = ['Chicken', 'Jerk', 'Rice', 'Tomatoes', 'Bisto']
+  end
+
+  def ingredients
+    @ingredients = [@cheese_toasty, @ham_sandwhich, @tomato_pasta, @jerk_chicken].reduce([], :concat)
   end
 
   def choices(ingredients_list)
