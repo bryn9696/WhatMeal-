@@ -20,10 +20,7 @@ class Ingredients
 
   def dictionary
     spell_check = ["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"]
-  end
-
-  def spell_check
-    dictionary.each do |ing|
+    spell_check.each do |ing|
       i = 0
       if ing.include?(@ingredients_list[i]) 
         @ingredients_list.delete_at(i)
@@ -31,7 +28,7 @@ class Ingredients
       end
       i += 1
     end
-    dictionary.each do |ing|
+    spell_check.each do |ing|
       i = 0
       if ing.chars().sort == @ingredients_list[i].chars().sort
         @ingredients_list.delete(@ingredients_list[i])
