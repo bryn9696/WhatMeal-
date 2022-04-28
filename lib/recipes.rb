@@ -8,16 +8,19 @@ class Recipes
     @ham_sandwhich = ['Ham', 'Bread', 'Butter']
     @tomato_pasta = ['Pasta', 'Tomatoes', 'Peppers', 'Chorizo']
     @jerk_chicken = ['Chicken', 'Jerk', 'Rice', 'Tomatoes', 'Bisto']
+    @sweet_chilli_chicken = ['Chicken', 'Rice', 'SweetChilliSauce', 'PineappleJuice', 'SoySauce']
   end
 
   def ingredients
-    @ingredients = [@cheese_toasty, @ham_sandwhich, @tomato_pasta, @jerk_chicken].reduce([], :concat)
+    @ingredients = [@cheese_toasty, @ham_sandwhich, @tomato_pasta, @jerk_chicken, @sweet_chilli_chicken].reduce([], :concat)
   end
 
   def choices(ingredients_list)
     self.cheese_toasty(ingredients_list)
     self.ham_sandwhich(ingredients_list)
     self.tomato_pasta(ingredients_list)
+    self.jerk_chicken(ingredients_list)
+    self.sweet_chilli_chicken(ingredients_list)
     @options.length >= 1 ? @options.uniq.join(', ') : "Have you got anything else?!"
   end
 
@@ -36,6 +39,18 @@ class Recipes
   def tomato_pasta(ingredients_list)
     @tomato_pasta.each do |i|
       ingredients_list.include?(i) == true ? @options << "Tomato Pasta" : @options
+    end
+  end
+
+  def jerk_chicken(ingredients_list)
+    @jerk_chicken.each do |i|
+      ingredients_list.include?(i) == true ? @options << "Jerk Chiken" : @options
+    end
+  end
+
+  def sweet_chilli_chicken(ingredients_list)
+    @sweet_chilli_chicken.each do |i|
+      ingredients_list.include?(i) == true ? @options << "Sweet Chilli Chiken" : @options
     end
   end
 end

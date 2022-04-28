@@ -36,4 +36,8 @@ describe Recipes do
     expect(recipe.choices(["Ham", "Cheese", "Bread"])).to eq("Cheese Toasty, Ham Sandwhich")
   end
 
+  it 'returns the new recipe matching one ingredient (when given first)' do
+    recipe = Recipes.new
+    expect(recipe.choices(["Chicken"])).to eq('Jerk Chiken, Sweet Chilli Chiken')
+  end
 end
