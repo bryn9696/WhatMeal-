@@ -16,17 +16,14 @@ class Ingredients
       total += 1
     end
     @ingredients_list = @ingredients_list.uniq.sort
-    return @ingredients_list
   end
 
   def dictionary
     spell_check = ["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"]
-    # @ingredients_list.each do |ing|
-    #   if spell_check.include?(ing) == false
-    #     @ingredients_list.delete(ing)
-    #   end
-    # end
-    spell_check.each do |ing|
+  end
+
+  def spell_check
+    dictionary.each do |ing|
       i = 0
       if ing.include?(@ingredients_list[i]) 
         @ingredients_list.delete_at(i)
@@ -34,8 +31,7 @@ class Ingredients
       end
       i += 1
     end
-    p @ingredients_list
-    spell_check.each do |ing|
+    dictionary.each do |ing|
       i = 0
       if ing.chars().sort == @ingredients_list[i].chars().sort
         @ingredients_list.delete(@ingredients_list[i])
@@ -43,12 +39,10 @@ class Ingredients
       end
       i += 1
     end
-    p @ingredients_list
-    return @ingredients_list.uniq.sort
+    @ingredients_list = @ingredients_list.uniq.sort
   end
 
   def choice
-    puts @ingredients_list
     @recipes.choices(@ingredients_list)
   end
 end
