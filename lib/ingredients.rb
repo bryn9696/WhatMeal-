@@ -8,13 +8,13 @@ class Ingredients
     @ingredients_list = []
   end
 
-  def ingredients
-    total = 1
-    while total < 6 do
-      input = gets.chomp
-      @ingredients_list << input.to_s.downcase.capitalize
-      total += 1
-    end
+  def self.ingredients(ingredients_list)
+    # total = 1
+    # while total < 6 do
+    #   input = gets.chomp
+    #   @ingredients_list << input.to_s.downcase.capitalize
+    #   total += 1
+    # end
     @ingredients_list = @ingredients_list.uniq.sort
   end
 

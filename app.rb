@@ -20,12 +20,19 @@ class Meal_Choice < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
+    # Ingredients.ingredients(@ingredients_list)
     erb :index
   end
 
-  get '/user_input' do
+  post '/user_input' do
+    @ingredients_list = []
+    @ingredients_list.push(params[:ing1])
+    @ingredients_list.push(params[:ing2])
+    @ingredients_list.push(params[:ing3])
+    @ingredients_list.push(params[:ing4])
+    @ingredients_list.push(params[:ing5])
+    return @ingredients_list
     redirect '/'
-    # @ingredients_list = @space_name = params[:Name]
     # @ingredients = Ingredients.ingredients
   end
 
