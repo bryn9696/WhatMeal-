@@ -23,4 +23,10 @@ class Meal_Choice < Sinatra::Base
     erb :index
   end
 
+  get '/user_input' do
+    redirect '/'
+    # @ingredients_list = @space_name = params[:Name]
+    # @ingredients = Ingredients.ingredients
+  end
+
 end
