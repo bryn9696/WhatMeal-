@@ -31,8 +31,8 @@ class Meal_Choice < Sinatra::Base
     @ingredients_list.push(params[:ing3])
     @ingredients_list.push(params[:ing4])
     @ingredients_list.push(params[:ing5])
-    return @ingredients_list
-    redirect '/'
+    p @ingredients_list
+    erb :user_input
     # @ingredients = Ingredients.ingredients
   end
 
