@@ -5,6 +5,7 @@ require 'sinatra/reloader'
 # require './database_connection_setup'
 # require './lib/bookings'
 require_relative './lib/ingredients'
+require_relative './lib/recipes'
 # require './lib/user'
 # require_relative './lib/update'
 # require './lib/images'
@@ -32,7 +33,9 @@ class Meal_Choice < Sinatra::Base
     @ingredients_list.push(params[:ing4])
     @ingredients_list.push(params[:ing5])
     
-    p @ingredients_list
+    @ing_list = Ingredients.ingredients(@ingredients_list)
+    p @ing_list
+    # p Ingredients.dictionary(@ing_list)
     p (params[:ing1])
     # Recipes.choices(@ingredients_list)
     # @d = Ingredients.dictionary(@ingredients_list)

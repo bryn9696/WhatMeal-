@@ -3,9 +3,9 @@ require_relative 'recipes.rb'
 class Ingredients
   attr_accessor :ingredients_list
 
-  # def initialize
-  #   @recipes = Recipes.new
-  # end
+  def initialize
+    @recipes = Recipes.new
+  end
 
   def self.ingredients(ingredients_list)
     # total = 1
@@ -18,7 +18,7 @@ class Ingredients
   end
 
   def self.dictionary(ingredients_list)
-    spell_check = @recipes.ingredients.uniq.sort   
+    spell_check = @recipes.ingredients_list   
     spell_check.each do |ing|
       i = 0
       if ing.include?(@ingredients_list[i][0, 2])
