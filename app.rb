@@ -33,15 +33,7 @@ class Meal_Choice < Sinatra::Base
     @ingredients_list.push(params[:ing4])
     @ingredients_list.push(params[:ing5])
     
-    @meal_choices = Ingredients.ingredients(@ingredients_list)
-    p '**************'
-    # p ing_list
-    # i = Ingredients.dictionary(ing_list)
-    # p Ingredients.dictionary(@ing_list)
-    p '**************'
-    # @meal_choices = Ingredients.choice(i)
-    # @d = Ingredients.dictionary(@ingredients_list)
-    # @c = Ingredients.choice(@ingredients_list)
+    @meal_choices = Ingredients.final(@ingredients_list)
     
     erb :user_input
     # @ingredients = Ingredients.ingredients
