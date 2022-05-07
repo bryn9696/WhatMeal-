@@ -37,6 +37,7 @@ describe Ingredients do
     # ing = Ingredients.new
     # allow(ing).to receive(:gets).and_return('Chee', 'bre')
     # ing.ingredients
+    p Ingredients.dictionary(["Cheese"])
     expect(Ingredients.dictionary(['Chee', 'bre'])).to eq(["Bread", "Cheese"])
   end
 
@@ -68,12 +69,12 @@ describe Ingredients do
     expect(Ingredients.dictionary(['Berad', 'Cehese', 'Hma', 'Psaat', 'Tomeasto'])).to eq(["Bread", "Cheese", "Ham", "Pasta", "Tomatoes"])
   end
 
-  it 'assumes correct ingredient when only 4 ingredients entered but multiple words spelt wrong (missing end letters) 3' do
-    # ing = Ingredients.new
-    # allow(ing).to receive(:gets).and_return('bradz')
-    # ing.ingredients
-    expect(Ingredients.dictionary(['bradz'])).to eq(["Bread"])
-  end
+  # it 'assumes correct ingredient when only 4 ingredients entered but multiple words spelt wrong (missing end letters) 3' do
+  #   # ing = Ingredients.new
+  #   # allow(ing).to receive(:gets).and_return('bradz')
+  #   # ing.ingredients
+  #   expect(Ingredients.dictionary(['bradz'])).to eq(["Bread"])
+  # end
 
   it 'returns the new recipe matching one ingredient (when given first)' do
     expect(Ingredients.choice(["Chicken"])).to eq('Jerk Chiken, Sweet Chilli Chiken')

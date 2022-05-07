@@ -19,24 +19,29 @@ class Ingredients
 
   def self.dictionary(ingredients_list)
     @recipes = Recipes.new.ingredient
-    spell_check = @recipes.uniq.sort     
+    spell_check = @recipes.uniq.sort  
+    p spell_check
+    p ingredients_list   
+    # spell_check.each do |ing|
+    #   i = 0
+    #   if ing.include?(ingredients_list[i][0, 2])
+    #     p ing
+    #     ingredients_list.delete_at(i)
+    #     ingredients_list << ing
+    #   end
+    #   i += 1
+    # end  
     spell_check.each do |ing|
       i = 0
-      if ing.include?(ingredients_list[i][0, 2])
-        ingredients_list.delete_at(i)
-        ingredients_list << ing
-      end
-      i += 1
-    end  
-    spell_check.each do |ing|
-      i = 0
+      p ingredients_list[i].chars().sort
       if ing.chars().sort == ingredients_list[i].chars().sort
+        p ing.chars().sort
         ingredients_list.delete(ingredients_list[i])
         ingredients_list << ing
       end
       i += 1
     end
-    ingredients_list.uniq.sort
+    p ingredients_list.uniq.sort
   end
 
   def self.choice(ingredients_list)
