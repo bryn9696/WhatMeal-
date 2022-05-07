@@ -11,8 +11,8 @@ class Recipes
     @sweet_chilli_chicken = ['Chicken', 'Rice', 'SweetChilliSauce', 'PineappleJuice', 'SoySauce']
   end
 
-  def ingredients
-    @ingredients = [@cheese_toasty, @ham_sandwhich, @tomato_pasta, @jerk_chicken, @sweet_chilli_chicken].reduce([], :concat)
+  def ingredient
+    @ingredient = [@cheese_toasty, @ham_sandwhich, @tomato_pasta, @jerk_chicken, @sweet_chilli_chicken].reduce([], :concat)
   end
 
   def choices(ingredients_list)
