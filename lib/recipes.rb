@@ -21,7 +21,7 @@ class Recipes
     self.tomato_pasta(ingredients_list)
     self.jerk_chicken(ingredients_list)
     self.sweet_chilli_chicken(ingredients_list)
-    @options.length >= 1 ? @options.uniq.join(', ') : "Have you got anything else?!"
+    @options.length >= 1 ? @options.uniq : "Have you got anything else?!"
   end
 
   def cheese_toasty(ingredients_list)

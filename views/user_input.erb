@@ -1,2 +1,13 @@
-<%= @ingredients_list %>
-<%= @meal_choices %>
+<!DOCTYPE html>
+<head> 
+  <link href="<%= url('/user_input.css') %>" rel="stylesheet" type="text/css" />
+</head>
+
+<h1> Meal Choices </h1>
+<div id='results'>
+  <p> From these ingredients '<%= @ingredients_list %>' you could make: </br></br>
+    <% @meal_choices.each do |choice| %>
+      <%= choice %></br></br>
+    <% end %>
+  </p>
+</div>

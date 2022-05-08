@@ -34,13 +34,13 @@ class Meal_Choice < Sinatra::Base
     @ingredients_list.push(params[:ing5])
     
     @meal_choices = Ingredients.final(@ingredients_list)
-    
+    @ingredients_list = @ingredients_list.join(', ')
     erb :user_input
     # @ingredients = Ingredients.ingredients
   end
 
-  get '/meal' do
-    p @ingredients_list
-  end
+  # get '/meal' do
+  #   p @ingredients_list
+  # end
 
 end
