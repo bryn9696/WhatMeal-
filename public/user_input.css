@@ -1,7 +1,7 @@
 h1 {
   display: flex;
   justify-content: center;
-  font-size: 3rem;
+  font-size: 2rem;
 }
 
 #results {
@@ -25,11 +25,11 @@ h1 {
   content: "\a";
     white-space: pre; */
     position:relative;
-    max-width: 900px;
+    max-width: 400px;
     max-height: 600px;
     /* height: 25%; */
     /* width: 50%; */
-    float: left;
+    /* float: center; */
     /* display: flex; */
     /* align-items: center; */
     margin: 0.8rem auto 0.8rem auto;

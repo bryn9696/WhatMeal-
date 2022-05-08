@@ -9,11 +9,17 @@
 </div>
 
 <div id='option' >
-  <% @meal_choices.each do |choice| %>
+  <% if @meal_choices == 'Have you got anything else?!' %>
     <div id='choice'>
-      <h4><%= choice.split(':')[0] %></h4>
-      <%= choice.split(':')[1] %></br></br>
+      <h4><%= @meal_choices %></h4>
     </div></br>
+  <% else %>
+    <% @meal_choices.each do |choice| %>
+      <div id='choice'>
+        <h4><%= choice.split(':')[0] %></h4>
+        <%= choice.split(':')[1] %>
+      </div>
+    <% end %>
   <% end %>
 </div>
 

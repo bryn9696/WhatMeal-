@@ -78,4 +78,9 @@ describe Ingredients do
   it 'returns the new recipe matching one ingredient (when given first)' do
     expect(Ingredients.choice(["Chicken"])).to eq('Jerk Chiken', 'Sweet Chilli Chiken')
   end
+
+  it 'returns the new recipe matching one ingredient (when given first)' do
+    p Ingredients.dictionary('pasta')
+    expect(Ingredients.final(["Pasta"])).to eq('Jerk Chiken')
+  end
 end

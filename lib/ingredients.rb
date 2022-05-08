@@ -14,7 +14,7 @@ class Ingredients
     ingredients_list.each do |ing|
       ing_list << ing.to_s.downcase.capitalize
     end
-    @ingredients_list = ing_list.uniq.sort
+    @ingredients_list = ing_list.compact.uniq.sort
   end
 
   def self.dictionary(ingredients_list)
@@ -37,6 +37,7 @@ class Ingredients
       end
       i += 1
     end
+    p @recipes
     ingredients_list.uniq.sort
   end
 
