@@ -26,31 +26,31 @@ class Recipes
 
   def cheese_toasty(ingredients_list)
     @cheese_toasty.each do |i|
-      ingredients_list.include?(i) == true ? @options << "Cheese Toasty" : @options
+      ingredients_list.include?(i) == true ? @options << "Cheese Toasty:#{@cheese_toasty.join(', ')}" : @options
     end
   end
 
   def ham_sandwhich(ingredients_list)
     @ham_sandwhich.each do |i|
-      ingredients_list.include?(i) == true ? @options << "Ham Sandwhich" : @options
+      ingredients_list.include?(i) == true ? @options << "Ham Sandwhich:#{@ham_sandwhich.join(', ')}" : @options
     end
   end
 
   def tomato_pasta(ingredients_list)
     @tomato_pasta.each do |i|
-      ingredients_list.include?(i) == true ? @options << "Tomato Pasta" : @options
+      ingredients_list.include?(i) == true ? @options << "Tomato Pasta:#{@tomato_pasta.join(', ')}" : @options
     end
   end
 
   def jerk_chicken(ingredients_list)
     @jerk_chicken.each do |i|
-      ingredients_list.include?(i) == true ? @options << "Jerk Chiken" : @options
+      ingredients_list.include?(i) == true ? @options << "Jerk Chiken:#{@jerk_chicken.join(', ')}" : @options
     end
   end
 
   def sweet_chilli_chicken(ingredients_list)
     @sweet_chilli_chicken.each do |i|
-      ingredients_list.include?(i) == true ? @options << "Sweet Chilli Chiken" : @options
+      ingredients_list.include?(i) == true ? @options << "Sweet Chilli Chiken:#{@sweet_chilli_chicken.join(', ')}" : @options
     end
   end
 end

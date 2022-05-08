@@ -5,9 +5,14 @@
 
 <h1> Meal Choices </h1>
 <div id='results'>
-  <p> From these ingredients '<%= @ingredients_list %>' you could make: </br></br>
-    <% @meal_choices.each do |choice| %>
-      <%= choice %></br></br>
-    <% end %>
-  </p>
+  <p> From these ingredients '<%= @ingredients_list %>' you could make: </p></br></br></br></br>
+      <div id='option' >
+        <% @meal_choices.each do |choice| %>
+          <% i = 1 %>
+            <h4>Choice <%= i %></h4></br></br>
+          <% i += 1 %>
+          <%= choice.split(':')[0] %></br></br>
+          <%= choice.split(':')[1] %></br></br>
+        <% end %>
+      </div>
 </div>

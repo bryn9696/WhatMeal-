@@ -37,7 +37,6 @@ describe Ingredients do
     # ing = Ingredients.new
     # allow(ing).to receive(:gets).and_return('Chee', 'bre')
     # ing.ingredients
-    p Ingredients.dictionary(["Cheese"])
     expect(Ingredients.dictionary(['Chee', 'bre'])).to eq(["Bread", "Cheese"])
   end
 
@@ -77,6 +76,6 @@ describe Ingredients do
   # end
 
   it 'returns the new recipe matching one ingredient (when given first)' do
-    expect(Ingredients.choice(["Chicken"])).to eq('Jerk Chiken, Sweet Chilli Chiken')
+    expect(Ingredients.choice(["Chicken"])).to eq('Jerk Chiken', 'Sweet Chilli Chiken')
   end
 end
