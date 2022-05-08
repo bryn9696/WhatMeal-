@@ -13,8 +13,17 @@ h1 {
 
 #option {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   padding-top: 10px;
+  max-width: 900px;
+  max-height: 600px;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin: 0.8rem auto 0.8rem auto;
+  
 }
 
 #choice {
@@ -24,18 +33,27 @@ h1 {
   padding-top: 10px;
   content: "\a";
     white-space: pre; */
-    position:relative;
-    max-width: 400px;
-    max-height: 600px;
+    
     /* height: 25%; */
     /* width: 50%; */
     /* float: center; */
     /* display: flex; */
     /* align-items: center; */
+    /* position:relative;
+    flex-direction: column;
+    max-width: 400px;
+    max-height: 600px;
     margin: 0.8rem auto 0.8rem auto;
     border: 2px solid black;
     padding: 1rem;
     border-radius: 10px;
     background-color: rgba(230, 247, 255 ,0.5);
-    font-size: 1.5rem;
+    font-size: 1.5rem; */
+     
+    border: 2px solid black;
+  padding: 1rem;
+  width: 400px;
+  border-radius: 10px;
+  background-color: rgba(230, 247, 255 ,0.5);
+  gap: 50px 20px;
 }

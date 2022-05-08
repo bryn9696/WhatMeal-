@@ -2,13 +2,10 @@
 require 'sinatra/base'
 require 'sinatra/flash'
 require 'sinatra/reloader'
-# require './database_connection_setup'
-# require './lib/bookings'
+
 require_relative './lib/ingredients'
 require_relative './lib/recipes'
-# require './lib/user'
-# require_relative './lib/update'
-# require './lib/images'
+
 
 
 # App class
@@ -21,7 +18,6 @@ class Meal_Choice < Sinatra::Base
   register Sinatra::Flash
 
   get '/' do
-    # Ingredients.ingredients(@ingredients_list)
     erb :index
   end
 
@@ -34,16 +30,10 @@ class Meal_Choice < Sinatra::Base
     @ingredients_list.push(params[:ing5])
     
     @meal_choices = Ingredients.final(@ingredients_list)
-    # @ingredients_list = @ingredients_list.compact
     @ingredients_list = @ingredients_list.join(', ')
     p @ingredients_list
     p @meal_choices
     erb :user_input
-    # @ingredients = Ingredients.ingredients
   end
-
-  # get '/meal' do
-  #   p @ingredients_list
-  # end
 
 end
