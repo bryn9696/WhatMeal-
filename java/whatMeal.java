@@ -1,8 +1,10 @@
 import java.util.Arrays;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Set;
 
 public class whatMeal {
   public static void main(String[] args) {
@@ -21,16 +23,24 @@ public class whatMeal {
     for (int j = 0; j < words.length; j++) {
       for (int i = 0; i < cheeseToastieIngredients.length; i++) {
         if (words[j].equals(cheeseToastieIngredients[i])) {
-              // if (Arrays.binarySearch(cheeseToastieIngredients, words[j]) < 0) {
-                yourRecipes.add(0, "Cheese Toastie");
-              // }
-              break;
+            if (Arrays.binarySearch(cheeseToastieIngredients, words[j]) >= 0) {
+              yourRecipes.add(0, "Cheese Toastie");
+            }
+            break;
         }
       }
     }
+
+    Set<String> set = new HashSet<>(yourRecipes);
+    yourRecipes.clear();
+    yourRecipes.addAll(set);
     
     Collections.reverse(yourRecipes);
-    
-    System.out.println("Your recipes are: " + yourRecipes);
+    if (yourRecipes.size() > 0) {
+      System.out.println("Your recipes are: " + yourRecipes);
+    }
+    else {
+      System.out.println("We couldnt find you any recipes.");
+    }
   }
 }
