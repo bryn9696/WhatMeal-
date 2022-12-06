@@ -7,7 +7,7 @@ import java.util.Scanner;
 import java.util.Set;
 
 public class whatMeal {
-  public static void main(String[] args) {
+  static String[] userInput() {
     Scanner scanner = new Scanner(System.in);
     System.out.print("Enter word to ingredients: ");
     String input = scanner.nextLine();
@@ -15,6 +15,12 @@ public class whatMeal {
 
     String word = input.toLowerCase();
     String[] words = word.split(" ");
+
+    return words;
+  }
+
+  public static List<String> recipes(String[] args) {
+    String[] words =  userInput();
     List<String> yourRecipes = new ArrayList<>();
 
     String[] cheeseToastieIngredients = {"ham", "cheese", "bread"};
@@ -31,16 +37,21 @@ public class whatMeal {
       }
     }
 
+    return yourRecipes;
+  }
+  
+  public static void main(String[] args) {
+    List<String> yourRecipes = recipes(args);
     Set<String> set = new HashSet<>(yourRecipes);
     yourRecipes.clear();
     yourRecipes.addAll(set);
-    
+      
     Collections.reverse(yourRecipes);
     if (yourRecipes.size() > 0) {
       System.out.println("Your recipes are: " + yourRecipes);
     }
     else {
-      System.out.println("We couldnt find you any recipes.");
+      System.out.println("We couldn't find you any recipes.");
     }
   }
 }
