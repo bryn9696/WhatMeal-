@@ -13,28 +13,24 @@ public class whatMeal {
 
     String word = input.toLowerCase();
     String[] words = word.split(" ");
-    List<String> incorrectlySpeltWords = new ArrayList<>();
+    List<String> yourRecipes = new ArrayList<>();
 
-    String[] dictionary = {"ham", "cheese", "bread"};
-    Arrays.sort(dictionary);
+    String[] cheeseToastieIngredients = {"ham", "cheese", "bread"};
+    Arrays.sort(cheeseToastieIngredients);
 
     for (int j = 0; j < words.length; j++) {
-      for (int i = 0; i < dictionary.length; i++) {
-        if (words[j].equals(dictionary[i])) {
-              // if (Arrays.binarySearch(dictionary, words[j]) < 0) {
-                incorrectlySpeltWords.add(0, words[j]);
+      for (int i = 0; i < cheeseToastieIngredients.length; i++) {
+        if (words[j].equals(cheeseToastieIngredients[i])) {
+              // if (Arrays.binarySearch(cheeseToastieIngredients, words[j]) < 0) {
+                yourRecipes.add(0, "Cheese Toastie");
               // }
               break;
         }
       }
     }
     
-    Collections.reverse(incorrectlySpeltWords);
-    if (incorrectlySpeltWords.size() > 1) {
-      System.out.println("These words " + incorrectlySpeltWords + " are spelt incorrectly.");
-    } else {
-      System.out.println("This word " + incorrectlySpeltWords + " is spelt incorrectly.");
-    }
-    System.out.println("Check complete!");
+    Collections.reverse(yourRecipes);
+    
+    System.out.println("Your recipes are: " + yourRecipes);
   }
 }
