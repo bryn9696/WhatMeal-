@@ -13,23 +13,27 @@ public class whatMeal {
     String input = scanner.nextLine();
     scanner.close();
 
-    String word = input.toLowerCase();
-    String[] words = word.split(" ");
+    String ingredients = input.toLowerCase();
+    String[] ingredientsList = ingredients.split(" ");
 
-    return words;
+    return ingredientsList;
   }
 
   public static List<String> recipes(String[] args) {
-    String[] words =  userInput();
+    String[] ingredientsList =  userInput();
     List<String> yourRecipes = new ArrayList<>();
 
-    String[] cheeseToastieIngredients = {"ham", "cheese", "bread"};
-    Arrays.sort(cheeseToastieIngredients);
+    String[] cheeseToastie = {"ham", "cheese", "bread"};
+    Arrays.sort(cheeseToastie);
+    String[] hamSandwhich = {"ham", "cheese", "bread"};
+    Arrays.sort(hamSandwhich);
+    String[] tomatoPasta = {"ham", "cheese", "bread"};
+    Arrays.sort(tomatoPasta);
 
-    for (int j = 0; j < words.length; j++) {
-      for (int i = 0; i < cheeseToastieIngredients.length; i++) {
-        if (words[j].equals(cheeseToastieIngredients[i])) {
-            if (Arrays.binarySearch(cheeseToastieIngredients, words[j]) >= 0) {
+    for (int j = 0; j < ingredientsList.length; j++) {
+      for (int i = 0; i < cheeseToastie.length; i++) {
+        if (ingredientsList[j].equals(cheeseToastie[i])) {
+            if (Arrays.binarySearch(cheeseToastie, ingredientsList[j]) >= 0) {
               yourRecipes.add(0, "Cheese Toastie");
             }
             break;
