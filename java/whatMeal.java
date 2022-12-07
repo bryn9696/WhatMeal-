@@ -25,16 +25,38 @@ public class whatMeal {
 
     String[] cheeseToastie = {"ham", "cheese", "bread"};
     Arrays.sort(cheeseToastie);
-    String[] hamSandwhich = {"ham", "cheese", "bread"};
+    String[] hamSandwhich = {"ham", "bread"};
     Arrays.sort(hamSandwhich);
-    String[] tomatoPasta = {"ham", "cheese", "bread"};
+    String[] tomatoPasta = {"tomato", "pasta"};
     Arrays.sort(tomatoPasta);
 
     for (int j = 0; j < ingredientsList.length; j++) {
       for (int i = 0; i < cheeseToastie.length; i++) {
         if (ingredientsList[j].equals(cheeseToastie[i])) {
             if (Arrays.binarySearch(cheeseToastie, ingredientsList[j]) >= 0) {
-              yourRecipes.add(0, "Cheese Toastie: " + String.join(", ", cheeseToastie) );
+              yourRecipes.add(0, "Cheese Toastie: (" + String.join(", ", cheeseToastie) + ")");
+            }
+            break;
+        }
+      }
+    }
+
+    for (int j = 0; j < ingredientsList.length; j++) {
+      for (int i = 0; i < hamSandwhich.length; i++) {
+        if (ingredientsList[j].equals(hamSandwhich[i])) {
+            if (Arrays.binarySearch(hamSandwhich, ingredientsList[j]) >= 0) {
+              yourRecipes.add(0, "Ham Sandwhich: (" + String.join(", ", hamSandwhich) + ")");
+            }
+            break;
+        }
+      }
+    }
+
+    for (int j = 0; j < ingredientsList.length; j++) {
+      for (int i = 0; i < tomatoPasta.length; i++) {
+        if (ingredientsList[j].equals(tomatoPasta[i])) {
+            if (Arrays.binarySearch(tomatoPasta, ingredientsList[j]) >= 0) {
+              yourRecipes.add(0, "Tomato Pasta: (" + String.join(", ", tomatoPasta) + ")");
             }
             break;
         }
