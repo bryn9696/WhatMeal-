@@ -34,7 +34,7 @@ public class whatMeal {
       for (int i = 0; i < cheeseToastie.length; i++) {
         if (ingredientsList[j].equals(cheeseToastie[i])) {
             if (Arrays.binarySearch(cheeseToastie, ingredientsList[j]) >= 0) {
-              yourRecipes.add(0, "Cheese Toastie");
+              yourRecipes.add(0, "Cheese Toastie: " + String.join(", ", cheeseToastie) );
             }
             break;
         }
